@@ -10,7 +10,7 @@
 ###
 
 FROM ubuntu:14.04
-MAINTAINER Kingsquare <docker@kingsquare.nl>
+MAINTAINER coreypobrien
 
 ENV SSH_AUTH_SOCK /ssh-agent
 
@@ -19,7 +19,7 @@ ENV SSH_AUTH_SOCK /ssh-agent
 RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get update -q && \
 	apt-get install -yq openssh-client && \
-	apt-get autoremove --purge -yq
+	apt-get autoremove --purge -yq && \
 	apt-get clean && \
 	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
 
